@@ -297,7 +297,7 @@ void *chassis_event_thread_loop(chassis_event_thread_t *thread) {
             chassis_event_thread_update_conn_status(thread);
         }
 
-        timeout.tv_sec = 1;
+        timeout.tv_sec = (chassis *)(thread->chas)->event_loopexit_timeout;
         timeout.tv_usec = 0;
 
         g_assert(event_base_loopexit(thread->event_base, &timeout) == 0);

@@ -128,6 +128,8 @@ struct chassis {
     chassis_options_t *opts;
 
     gdouble db_connect_timeout;
+
+    gint event_loopexit_timeout;
 };
 
 

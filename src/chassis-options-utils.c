@@ -907,6 +907,7 @@ assign_db_connect_timeout(const char *newval, void *ex_param)
     return (ret? 0: -1);
 }
 
+
 gchar *
 show_log_trace_modules(void *ex_param)
 {
@@ -944,6 +945,13 @@ gchar* show_db_connect_timeout(void *ex_param)
     chassis *srv = opt_param->chas;
 
     return g_strdup_printf("%lf", srv->db_connect_timeout);
+}
+gchar* show_event_loopexit_timeout(void *ex_param)
+{
+    external_param *opt_param = (external_param *)ex_param;
+    chassis *srv = opt_param->chas;
+
+    return g_strdup_printf("%d", srv->event_loopexit_timeout);
 }
 
 gint

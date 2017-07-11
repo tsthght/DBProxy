@@ -105,6 +105,7 @@ CHASSIS_API gchar* show_version(void *external_param);
 CHASSIS_API gchar* show_daemon(void *external_param);
 CHASSIS_API gchar* show_assign_backend_monitor_pwds(void *external_param);
 CHASSIS_API gchar* show_db_connect_timeout(void *external_param);
+CHASSIS_API gchar* show_event_loopexit_timeout(void *ex_param);
 CHASSIS_API int save_config(chassis *chas);
 CHASSIS_API gboolean opt_match(const char *str, const char *prefix);
 CHASSIS_API gint set_raw_int_value(const gchar *newval, gint *param, gint min, gint max);
