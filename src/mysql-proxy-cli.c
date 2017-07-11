@@ -218,7 +218,7 @@ typedef struct {
 
     gdouble db_connect_timeout;
 
-    gint event_loopexit_timeout;
+    gdouble event_loopexit_timeout;
 } chassis_frontend_t;
 
 /**
@@ -360,7 +360,7 @@ int chassis_frontend_set_chassis_options(chassis_frontend_t *frontend, chassis_o
     chassis_options_add(opts, "version", 0, 0, G_OPTION_ARG_INT, &(frontend->print_version), "print dbproxy version", NULL, NULL, show_version, SHOW_OPTS_PROPERTY);
 
     chassis_options_add(opts, "db-connect-timeout", 0, 0, G_OPTION_ARG_DOUBLE, &(frontend->db_connect_timeout), "connect mysql's timeout (default 3.0 s). value == 0, means don't set timeout.", NULL, assign_db_connect_timeout, show_db_connect_timeout, ALL_OPTS_PROPERTY);
-    chassis_options_add(opts, "event-loopexit-timeout", 0, 0, G_OPTION_ARG_INT, &(frontend->event_loopexit_timeout), "event thread loop exit timeout ,default 1s", NULL, NULL, show_event_loopexit_timeout, SHOW_OPTS_PROPERTY);
+    chassis_options_add(opts, "event-loopexit-timeout", 0, 0, G_OPTION_ARG_DOUBLE, &(frontend->event_loopexit_timeout), "event thread loop exit timeout ,default 1s", NULL, NULL, show_event_loopexit_timeout, SHOW_OPTS_PROPERTY);
 
 
     return 0;   
@@ -828,8 +828,8 @@ int main_cmdline(int argc, char **argv) {
         GOTO_EXIT(EXIT_FAILURE);
     }
     srv->db_connect_timeout = frontend->db_connect_timeout;
-    if(frontend->event_loopexit_timeout <1) {
-        srv->event_loopexit_timeout = 1;
+    if(frontend->event_loopexit_timeout <1.0) {
+        srv->event_loopexit_timeout = 1.0;
     } else {
         srv->event_loopexit_timeout = frontend->event_loopexit_timeout;
     }

@@ -129,7 +129,7 @@ struct chassis {
 
     gdouble db_connect_timeout;
 
-    gint event_loopexit_timeout;
+    gdouble event_loopexit_timeout;
 };
 
 
