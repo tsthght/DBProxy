@@ -297,8 +297,8 @@ void *chassis_event_thread_loop(chassis_event_thread_t *thread) {
             chassis_event_thread_update_conn_status(thread);
         }
 
-        timeout.tv_sec = (time_t)floor((chassis *)(thread->chas)->event_loopexit_timeout);
-        timeout.tv_usec = (time_t)floor(((chassis *)(thread->chas)->event_loopexit_timeout - timeout.tv_sec) * 1000000);
+        timeout.tv_sec = (time_t)floor(((chassis *)(thread->chas))->event_loopexit_timeout);
+        timeout.tv_usec = (time_t)floor((((chassis *)(thread->chas))->event_loopexit_timeout - timeout.tv_sec) * 1000000);
 /*
         timeout.tv_sec = (chassis *)(thread->chas)->event_loopexit_timeout;
         timeout.tv_usec = 0;
