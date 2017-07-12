@@ -828,12 +828,12 @@ int main_cmdline(int argc, char **argv) {
         GOTO_EXIT(EXIT_FAILURE);
     }
     srv->db_connect_timeout = frontend->db_connect_timeout;
-    if(frontend->event_loopexit_timeout <1.0) {
+    if(frontend->event_loopexit_timeout <0.0) {
         srv->event_loopexit_timeout = 1.0;
     } else {
         srv->event_loopexit_timeout = frontend->event_loopexit_timeout;
     }
-
+    printf("init %lf\n", srv->event_loopexit_timeout);
     /*
      * the MySQL Proxy should load 'admin' and 'proxy' plugins
      */

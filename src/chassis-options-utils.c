@@ -950,8 +950,8 @@ gchar* show_event_loopexit_timeout(void *ex_param)
 {
     external_param *opt_param = (external_param *)ex_param;
     chassis *srv = opt_param->chas;
-
-    return g_strdup_printf("%d", srv->event_loopexit_timeout);
+    printf("show %lf", srv->event_loopexit_timeout);
+    return g_strdup_printf("%lf", srv->event_loopexit_timeout);
 }
 
 gint
