@@ -131,6 +131,7 @@ drop table if exists A;
 create table A (c int);
 insert into A (c) values (0);
 --error 0,ER_LOCK_DEADLOCK,ER_TABLE_EXISTS_ERROR
+--error 1786
 create table a as select * from A;
 drop table A;
 

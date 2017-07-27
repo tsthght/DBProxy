@@ -411,7 +411,7 @@ BEGIN
   DROP TABLE t1;
 END|
 delimiter ;|
-
+--error 1786
 CALL p1(NOW());
 
 CALL p1('test');

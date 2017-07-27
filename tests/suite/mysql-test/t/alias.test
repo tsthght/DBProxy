@@ -204,10 +204,13 @@ insert into t3 select t2.*, d as 'x', d as 'z' from t2;
 insert into t3 select t2.*, t2.*, 3 from t2;
 
 # create
+--error 1786
 create table t4 select t1.* from t1;
 drop table t4;
+--error 1786
 create table t4 select t2.*, 1, 2 from t2;
 drop table t4;
+--error 1786
 create table t4 select t2.*, d as 'x', d as 'z' from t2;
 drop table t4;
 

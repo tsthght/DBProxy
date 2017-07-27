@@ -404,6 +404,7 @@ insert into t1 values ('a'),('b');
 select charset(max(a)), coercibility(max(a)),
        charset(min(a)), coercibility(min(a)) from t1;
 show create table t1;
+--error 1786
 create table t2 select max(a),min(a) from t1;
 show create table t2;
 drop table t2;

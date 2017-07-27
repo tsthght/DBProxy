@@ -32,6 +32,7 @@ drop table t1;
 #
 # if function test
 #
+--error 1786
 create table t1 select if(1, 1.1, 1.2), if(0, 1.1, 1.2), if(0.1, 1.1, 1.2), if(0, 1, 1.1), if(0, NULL, 1.2), if(1, 0.22e1, 1.1), if(1E0, 1.1, 1.2);
 select * from t1;
 show create table t1;

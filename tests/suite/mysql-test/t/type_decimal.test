@@ -380,6 +380,7 @@ drop table t1;
 #
 # Bug#22183: Unhandled NULL caused server crash
 #
+--error 1786
 create table t1 as
  select from_days(s) as date,t
  from (select 1 as s,'t' as t union select null, null ) as sub1;

@@ -87,6 +87,7 @@ select insert("aa",100,1,"b"),insert("aa",1,3,"b");
 #
 # CREATE ... SELECT
 #
+--error 1786
 eval create table t1 ENGINE $engine select date_format("2004-01-19 10:10:10", "%Y-%m-%d");
 show create table t1;
 select * from t1;
@@ -1783,6 +1784,7 @@ eval CREATE TABLE t3 (
 
 # Insert select utf8mb4 (4-byte) into utf8 (3-byte), error
 #--error ER_INVALID_CHARACTER_STRING
+--error 1786
 INSERT INTO t3 SELECT * FROM t1;
 
 --disable_warnings

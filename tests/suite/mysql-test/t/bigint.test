@@ -127,7 +127,7 @@ drop table t1;
 #
 # Test of CREATE ... SELECT and unsigned integers
 #
-
+--error 1786
 create table t1 select 1 as 'a';
 show create table t1;
 drop table t1;

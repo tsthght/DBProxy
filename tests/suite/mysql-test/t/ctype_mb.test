@@ -4,7 +4,7 @@
 --disable_warnings
 drop table if exists t1;
 --enable_warnings
-
+--error 1786
 CREATE TABLE t1 SELECT _utf8'test' as c1, _utf8'тест' as c2;
 SHOW CREATE TABLE t1;
 ALTER TABLE t1 ADD c3 CHAR(4) CHARACTER SET utf8;

@@ -183,6 +183,7 @@ explain select * from t1 where a='aaac';
 explain select * from t1 where a='aaad';
 
 # Check if delete_all_rows() updates #hash_buckets
+--error 1786
 create table t2 as select * from t1;
 insert into t1 select * from t2;
 explain select * from t1 where a='aaaa';

@@ -96,7 +96,7 @@ select ceil(0.000000000000000009);
 #
 # Bug #9837: problem with round()
 #
-
+--error 1786
 create table t1 select round(1, 6);
 show create table t1;
 select * from t1;

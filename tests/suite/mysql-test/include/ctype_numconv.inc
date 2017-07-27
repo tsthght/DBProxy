@@ -10,6 +10,7 @@ select @@collation_connection;
 # Basic constants
 #
 select hex(concat(1));
+--error 1786
 create table t1 as select concat(1) as c1;
 show create table t1;
 select hex(c1) from t1;

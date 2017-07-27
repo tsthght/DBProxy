@@ -225,7 +225,7 @@ DROP TABLE t1,t2;
 #
 # Bug #31990: MINUTE() and SECOND() return bogus results when used on a DATE
 #
-
+--error 1786
 CREATE TABLE t1 SELECT curdate() AS f1;
 SELECT hour(f1), minute(f1), second(f1) FROM t1;
 DROP TABLE t1;

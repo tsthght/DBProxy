@@ -5,7 +5,7 @@
 
 # If this part is wrong, most likely you've done wrong modification of system database "mysql"
 #
-
+--error 1786
 create table test_db select * from mysql.db;
 --disable_warnings
 --enable_warnings

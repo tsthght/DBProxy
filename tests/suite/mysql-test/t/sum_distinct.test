@@ -30,7 +30,7 @@ SELECT SUM(DISTINCT LENGTH(name)) s1 FROM t1;
 
 INSERT INTO t1 (gender, name) VALUES ('F', 'Helen'), ('F', 'Anastasia'),
 ('F', 'Katherine'), ('F', 'Margo'), ('F', 'Magdalene'), ('F', 'Mary');
-
+--error 1786
 CREATE TABLE t2 SELECT name FROM t1;
 
 SELECT (SELECT SUM(DISTINCT LENGTH(name)) FROM t1) FROM t2;

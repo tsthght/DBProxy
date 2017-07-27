@@ -271,6 +271,7 @@ create table t1 (a varchar(255) character set cp1250 collate cp1250_general_ci,
 insert into t1 values ('xxx','yyy');
 select collation(a) from t1;
 select collation(group_concat(a)) from t1;
+--error 1786
 create table t2 select group_concat(a) as a from t1;
 show create table t2;
 select collation(group_concat(a,_koi8r'test')) from t1;
