@@ -49,6 +49,7 @@ SET NAMES latin1;
 #
 # CASE and argument types/collations aggregation into result 
 #
+--error 1786
 CREATE TABLE t1 SELECT 
  CASE WHEN 1 THEN _latin1'a' COLLATE latin1_danish_ci ELSE _latin1'a' END AS c1,
  CASE WHEN 1 THEN _latin1'a' ELSE _latin1'a' COLLATE latin1_danish_ci END AS c2,

@@ -9,7 +9,7 @@
 create table test_db select * from mysql.db;
 --disable_warnings
 --enable_warnings
-
+--error 1786
 create table test_host select * from mysql.host;
 --disable_warnings
 --enable_warnings

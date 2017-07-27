@@ -21,6 +21,7 @@ let $other_handler_engine_type= MyISAM;
 --echo #
 --echo # BUG #46456: HANDLER OPEN + TRUNCATE + DROP (temporary) TABLE, crash 
 --echo #
+--error 1786
 CREATE TABLE t1 AS SELECT 1 AS f1; 
 HANDLER t1 OPEN;
 TRUNCATE t1;

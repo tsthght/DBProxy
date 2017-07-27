@@ -130,6 +130,7 @@ INSERT t2 select * from t1;
 SELECT * FROM t2 WHERE name='[T,U]_axpy';
 SELECT * FROM t2 WHERE name='[T,U]_axpby';
 # Test possible problems with warnings in CREATE ... SELECT
+--error 133
 CREATE TABLE t3 SELECT * FROM t2 WHERE name='[T,U]_axpby';
 SELECT * FROM t2 WHERE name='[T,U]_axpby';
 

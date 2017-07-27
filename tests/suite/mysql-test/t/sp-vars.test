@@ -413,7 +413,7 @@ END|
 delimiter ;|
 --error 1786
 CALL p1(NOW());
-
+--error 1786
 CALL p1('test');
 
 #

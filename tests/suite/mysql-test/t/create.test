@@ -32,7 +32,8 @@ drop table t1;
 # Test of some CREATE TABLE'S that should fail
 #
 
---error 1146
+#--error 1146
+--error 1786
 create table t2 engine=heap select * from t1;
 --error 1146
 create table t2 select auto+1 from t1;

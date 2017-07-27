@@ -12,7 +12,7 @@ drop table if exists t1;
 # using current values of
 # @@character_set_connection and  @@collation_connection.
 #
-
+--error 1786
 create table t1 as
 select repeat(' ', 64) as s1, repeat(' ',64) as s2
 union

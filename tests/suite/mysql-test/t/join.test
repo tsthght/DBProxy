@@ -623,7 +623,7 @@ drop table t1, t2, t3, t4, t5;
 CREATE TABLE t1 (ID INTEGER, Name VARCHAR(50));
 CREATE TABLE t2 (Test_ID INTEGER);
 CREATE VIEW v1 (Test_ID, Description) AS SELECT ID, Name FROM t1;
-
+--error 1786
 CREATE TABLE tv1 SELECT Description AS Name FROM v1 JOIN t2
  USING (Test_ID);
 DESCRIBE tv1;
