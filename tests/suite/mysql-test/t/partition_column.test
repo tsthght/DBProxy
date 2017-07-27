@@ -358,7 +358,7 @@ partition by range columns(a,b)
 insert into t1 values (99,998);
 select * from t1 where b = 998;
 drop table t1;
-
+--error 1786
 create table t1 as select to_seconds(null) as to_seconds;
 select data_type from information_schema.columns
 where column_name='to_seconds';
