@@ -109,6 +109,7 @@ select distinct t from t1 order by t;
 select distinct b from t1 order by b;
 select t from t1 group by t;
 select b from t1 group by b;
+--error 1193
 set sql_big_tables=1;
 select distinct t from t1;
 select distinct b from t1;

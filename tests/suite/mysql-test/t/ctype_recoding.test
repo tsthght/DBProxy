@@ -1,5 +1,5 @@
 --disable_warnings
-DROP TABLE IF EXISTS таблица, t1, t2;
+# DROP TABLE IF EXISTS таблица, t1, t2;
 --enable_warnings
 
 

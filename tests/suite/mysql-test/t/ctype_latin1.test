@@ -64,6 +64,7 @@ DROP TABLE t1;
 # 0x9E 0x017E  #LATIN SMALL LETTER Z WITH CARON
 # 0x9F 0x0178  #LATIN CAPITAL LETTER Y WITH DIAERESIS
 #
+--error 1300
 SELECT 1 as ƒ, 2 as Š, 3 as Œ, 4 as Ž, 5 as š, 6 as œ, 7 as ž, 8 as Ÿ;
 
 #

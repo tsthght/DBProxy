@@ -28,6 +28,7 @@ select password('');
 select old_password('');
 select password('idkfa');
 select old_password('idkfa');
+--error 1232
 set old_passwords=on;
 select password('idkfa');
 select old_password('idkfa');

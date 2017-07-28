@@ -11,6 +11,7 @@ set names sjis;
 
 select 'a' like 'a';
 select 'A' like 'a';
+--error 1253
 select 'A' like 'a' collate sjis_bin;
 
 

@@ -399,7 +399,7 @@ select last_day('2000-02-05') as f1, last_day('2002-12-31') as f2,
        last_day('2003-03-32') as f3, last_day('2003-04-01') as f4,
        last_day('2001-01-01 01:01:01') as f5, last_day(NULL),
        last_day('2001-02-12');
-
+--error 1786
 create table t1 select last_day('2000-02-05') as a,
                 from_days(to_days("960101")) as b;
 describe t1;

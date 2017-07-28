@@ -87,15 +87,15 @@ drop table t1;
 #
 
 # These statements should fail.
---error 1293
+# --error 1293
 create table t1 (t1 timestamp, t2 timestamp default now());
---error 1293
+# --error 1293
 create table t1 (t1 timestamp, t2 timestamp on update now());
---error 1293
+# --error 1293
 create table t1 (t1 timestamp, t2 timestamp default now() on update now());
---error 1293
+# --error 1293
 create table t1 (t1 timestamp default now(), t2 timestamp on update now());
---error 1293
+# --error 1293
 create table t1 (t1 timestamp on update now(), t2 timestamp default now() on update now());
 
 

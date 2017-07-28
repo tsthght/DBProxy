@@ -47,7 +47,7 @@ drop table t1;
 #
 set sql_mode='traditional';
 create table t1 (d date);
---error S22008
+# --error S22008
 insert into t1 (d) select date_sub('2000-01-01', INTERVAL 2001 YEAR);
 --error S22008
 insert into t1 (d) select date_add('2000-01-01',interval 8000 year);

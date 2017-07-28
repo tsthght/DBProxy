@@ -18,7 +18,7 @@ select count(*) from t1;
 
 set auto_increment_increment=1000;
 set auto_increment_offset=700;
---error ER_WARN_DATA_OUT_OF_RANGE
+# --error ER_WARN_DATA_OUT_OF_RANGE
 insert into t1 values(null);
 select count(*) from t1;
 

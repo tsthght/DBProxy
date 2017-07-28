@@ -139,7 +139,7 @@ BEGIN
   SELECT HEX(v10);
 END|
 delimiter ;|
-
+--error 1406
 CALL p1();
 
 #

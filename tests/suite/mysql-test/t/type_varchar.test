@@ -6,7 +6,7 @@ drop table if exists t1, t2;
 # Test with varchar of lengths 254,255,256,258 & 258 to ensure we don't
 # have any problems with varchar with one or two byte length_bytes
 #
-
+--error 1071
 create table t1 (v varchar(254), index (v));
 insert into t1 values ("This is a test ");
 insert into t1 values ("Some sample data");

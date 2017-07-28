@@ -303,6 +303,7 @@ DROP TABLE t1;
 #
 # Bug#35765: ALTER TABLE produces wrong error when non-existent storage engine
 # used
+--error 1286
 CREATE TABLE t1 (a INT)
 ENGINE=NonExistentEngine;
 DROP TABLE t1;

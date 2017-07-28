@@ -16,7 +16,7 @@ select * from t1 procedure analyse(2);
 create table t2 select * from t1 procedure analyse();
 drop table t1;
 
---error ER_WRONG_USAGE
+# --error ER_WRONG_USAGE
 EXPLAIN SELECT 1 FROM (SELECT 1) a PROCEDURE ANALYSE();
 
 #
