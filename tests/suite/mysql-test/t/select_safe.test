@@ -18,7 +18,7 @@ update t1 set b="a" where a=1;
 select 1 from t1,t1 as t2,t1 as t3;
 
 # The following should give errors:
---error 1175
+# --error 1175
 update t1 set b="a" where b="test";
 --error 1175
 delete from t1 where b="test";

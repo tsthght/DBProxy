@@ -1,4 +1,5 @@
 --source include/have_innodb.inc
 --error 1109
 select * from information_schema.XTRADB_ADMIN_COMMAND;
+--error 1109
 select * from information_schema.XTRADB_ADMIN_COMMAND /*!XTRA_HELLO*/;

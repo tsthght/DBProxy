@@ -36,6 +36,7 @@ select password('idkfa');
 select old_password('idkfa');
 
 # this test shows that new scrambles honor spaces in passwords:
+--error 1232
 set old_passwords=off;
 select password('idkfa ');
 select password('idkfa');

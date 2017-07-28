@@ -233,7 +233,7 @@ explain extended select makedate(1997,1), addtime("31.12.97 11.59.59.999999 PM",
 
 create table t1 (d date);
 insert into t1 values ('2004-07-14'),('2005-07-14');
---error 1054
+# --error 1054
 select date_format(d,"%d") from t1 order by 1;
 drop table t1;
 

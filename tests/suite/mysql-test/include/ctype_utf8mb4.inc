@@ -22,6 +22,7 @@ select locate('HE','hello',2);
 select locate('LO','hello',2);
 --error 1253
 select locate('HE','hello' collate utf8mb4_bin);
+--error 1253
 select locate('HE','hello' collate utf8mb4_bin,2);
 select locate('LO','hello' collate utf8mb4_bin,2);
 
