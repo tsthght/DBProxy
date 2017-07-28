@@ -139,7 +139,7 @@ BEGIN
   SELECT HEX(v10);
 END|
 delimiter ;|
---error 1406
+
 CALL p1();
 
 #
@@ -367,6 +367,7 @@ END|
 delimiter ;|
 
 CALL p1('alpha', 'abc');
+--error 1406
 CALL p1('alpha', 'abcdef');
 
 #
