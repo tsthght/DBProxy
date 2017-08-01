@@ -32,7 +32,7 @@ select locate('HE','hello',2);
 select locate('LO','hello',2);
 # --error 1253
 select locate('HE','hello' collate ujis_bin);
---error 1253
+# --error 1253
 select locate('HE','hello' collate ujis_bin,2);
 --error 1253
 select locate('LO','hello' collate ujis_bin,2);
