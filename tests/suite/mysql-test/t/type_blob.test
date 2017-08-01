@@ -317,6 +317,7 @@ eval explain extended select
 eval update t1 set imagem=load_file('$MYSQLTEST_VARDIR/std_data/words.dat') where id=1;
 select if(imagem is null, "ERROR", "OK"),length(imagem) from t1 where id = 1;
 drop table t1;
+--error 1786
 eval create table t1 select load_file('$MYSQLTEST_VARDIR/std_data/words.dat') l;
 # We mask out the Privileges column because it differs for embedded server
 show full fields from t1;

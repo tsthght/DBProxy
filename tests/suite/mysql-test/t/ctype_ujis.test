@@ -30,7 +30,7 @@ select locate('lo','hello',2);
 select locate('HE','hello');
 select locate('HE','hello',2);
 select locate('LO','hello',2);
---error 1253
+# --error 1253
 select locate('HE','hello' collate ujis_bin);
 --error 1253
 select locate('HE','hello' collate ujis_bin,2);
@@ -43,6 +43,7 @@ select _ujis 0xa1a2a1a3 like concat(_ujis'%',_ujis 0xa2a1, _ujis'%');
 select _ujis 0xa1a2a1a3 like concat(_ujis'%',_ujis 0xa2a1, _ujis'%') collate ujis_bin;
 select 'a' like 'a';
 select 'A' like 'a';
+--error 1253
 select 'A' like 'a' collate ujis_bin;
 
 #
