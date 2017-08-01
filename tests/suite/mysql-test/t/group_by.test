@@ -21,7 +21,7 @@ CREATE TABLE t1 (
   lsg char(40),
   date date
 );
---error 1292
+# --error 1292
 INSERT INTO t1 VALUES (1,1,1,'','0000-00-00');
 INSERT INTO t1 VALUES (2,2,2,'','0000-00-00');
 INSERT INTO t1 VALUES (2,1,1,'','0000-00-00');

@@ -12,7 +12,7 @@ eval create table t1
   primary key (`a`)
 ) engine = $type ;
 set @@sql_mode='strict_all_tables';
---error ER_WARN_DATA_OUT_OF_RANGE
+# --error ER_WARN_DATA_OUT_OF_RANGE
 insert into t1 values(1000);
 select count(*) from t1;
 
